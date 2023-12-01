@@ -213,7 +213,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
       Eliminar();
       listas();
-     nuevo();
+      nuevo();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoActionPerformed
@@ -300,7 +300,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
             i = i - 1;
         }
         };
-            void Modificar() {
+        
+        void Modificar() {
         String telefono = txtTelefono.getText();
         String nom = txtNombre.getText();
         String sql = "update persona set nombres='" + nom + "',telefono='" + telefono + "' where Id=" + id;
@@ -330,15 +331,14 @@ public class PRINCIPAL extends javax.swing.JFrame {
                     st = con.createStatement();
                     st.executeUpdate(sql);
                     JOptionPane.showMessageDialog(null, "Usuario Eliminado");
-                    limpiarTabla(model);
-                    
+                    limpiarTabla(model);        
                 } catch (Exception e) {
                 }
                
         }
 
     }
-              void nuevo() {
+        void nuevo() {
         txtId.setText("");
         txtTelefono.setText("");
         txtNombre.setText("");
